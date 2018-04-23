@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GridCommandToPopupMenuProject", "GridCommandToPopupMenuProject\GridCommandToPopupMenuProject.vbproj", "{A3918025-1C64-4511-8F00-1BB27890AF08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3918025-1C64-4511-8F00-1BB27890AF08}.Debug|x86.ActiveCfg = Debug|x86
+		{A3918025-1C64-4511-8F00-1BB27890AF08}.Debug|x86.Build.0 = Debug|x86
+		{A3918025-1C64-4511-8F00-1BB27890AF08}.Release|x86.ActiveCfg = Release|x86
+		{A3918025-1C64-4511-8F00-1BB27890AF08}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
