@@ -1,0 +1,61 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:GridCommandToPopupMenuProject"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    x:Class="GridCommandToPopupMenuProject.MainWindow"
+    Title="DXApplication" Height="700" Width="1100"
+    SnapsToDevicePixels="True" UseLayoutRounding="True"
+    Name="MainWindows2"
+    >
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <dxb:BarManager CreateStandardLayout="True"  Name="barManager1" Grid.Column="0" Margin="10" >
+            <dxb:BarManager.Items>
+                <dxb:BarButtonItem x:Name="grComEdFocusRow" Content="GridCommand.EditFocusedRow" Command="{x:Static dxg:GridCommands.EditFocusedRow}"  />
+                <dxb:BarButtonItem x:Name="grComMoveFirstRow" Content="GridCommand.MoveFirstRow" Command="{x:Static dxg:GridCommands.MoveFirstRow}" />
+                <dxb:BarButtonItem x:Name="grComMoveLastRow" Content="GridCommand.MoveLastRow" Command="{x:Static dxg:GridCommands.MoveLastRow}"/>
+                <dxb:BarButtonItem x:Name="viewModelComCreateNewPerson" Content="ViewModelCommand.createNewPerson" Command="{Binding CreateNewPerson}" />
+                <dxb:BarButtonItem x:Name="viewModelComDeletePerson" Content="ViewModelCommand.DeletePerson" Command="{Binding DeletePerson}" />
+                <dxb:BarButtonItem x:Name="viewModelComGoTo5PersNext" Content="ViewModelCommand.GoToFivePersonNext" Command="{Binding GoToFivePersonNext}" />
+            </dxb:BarManager.Items>
+            <dxg:GridControl x:Name="gridControl1" AutoPopulateColumns="True" ItemsSource="{Binding ListPerson}" ContextMenu="{x:Null}">
+                <dxg:GridControl.View  >
+                    <dxg:TableView FocusedRowHandle="{Binding SelectedPersonNum, Mode=TwoWay}">
+                        <dxg:TableView.RowCellMenuCustomizations>
+                            <dxb:BarButtonItemLink BarItemName="grComEdFocusRow"/>
+                            <dxb:BarButtonItemLink BarItemName="grComMoveFirstRow"/>
+                            <dxb:BarButtonItemLink BarItemName="grComMoveLastRow"/>
+                            <dxb:BarItemLinkSeparator/>
+                            <dxb:BarButtonItemLink BarItemName="viewModelComCreateNewPerson"/>
+                            <dxb:BarButtonItemLink BarItemName="viewModelComDeletePerson"/>
+                            <dxb:BarButtonItemLink BarItemName="viewModelComGoTo5PersNext"/>
+                        </dxg:TableView.RowCellMenuCustomizations>
+                    </dxg:TableView>
+                </dxg:GridControl.View>
+            </dxg:GridControl>
+        </dxb:BarManager>
+
+        <dxg:GridControl AutoPopulateColumns="True" ItemsSource="{Binding ListPerson}" Grid.Column="1" Margin="10" >
+            <dxg:GridControl.View>
+                <dxg:TableView FocusedRowHandle="{Binding SelectedPersonNum, Mode=TwoWay}">
+                    <dxg:TableView.RowCellMenuCustomizations>
+                        <dxb:BarButtonItem Content="GridCommand.EditFocusedRow" Command="{x:Static dxg:GridCommands.EditFocusedRow}"/>
+                        <dxb:BarButtonItem Content="GridCommand.MoveFirstRow" Command="{x:Static dxg:GridCommands.MoveFirstRow}"/>
+                        <dxb:BarButtonItem Content="GridCommand.MoveLastRow" Command="{x:Static dxg:GridCommands.MoveLastRow}"/>
+                        <dxb:BarItemLinkSeparator/>
+                        <dxb:BarButtonItem Content="ViewModelCommand.createNewPerson" Command="{Binding Path=(dxg:GridPopupMenu.GridMenuInfo).View.DataContext.CreateNewPerson, RelativeSource={RelativeSource Self}}"/>
+                        <dxb:BarButtonItem Content="ViewModelCommand.DeletePerson" Command="{Binding Path=(dxg:GridPopupMenu.GridMenuInfo).View.DataContext.DeletePerson, RelativeSource={RelativeSource Self}}"/>
+                        <dxb:BarButtonItem Content="ViewModelCommand.GoToFivePersonNext" Command="{Binding Path=(dxg:GridPopupMenu.GridMenuInfo).View.DataContext.GoToFivePersonNext, RelativeSource={RelativeSource Self}}"/>
+                    </dxg:TableView.RowCellMenuCustomizations>
+                </dxg:TableView>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </Grid>
+</Window>
