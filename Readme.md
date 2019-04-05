@@ -2,7 +2,7 @@
 *Files to look at*:
 
 * **[MainWindow.xaml](./CS/GridCommandToPopupMenuProject/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/GridCommandToPopupMenuProject/MainWindow.xaml))**
-* [MainWindow.xaml.cs](./CS/GridCommandToPopupMenuProject/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/GridCommandToPopupMenuProject/MainWindow.xaml))
+* [MainWindow.xaml.cs](./CS/GridCommandToPopupMenuProject/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/GridCommandToPopupMenuProject/MainWindow.xaml.vb))
 * [Person.cs](./CS/GridCommandToPopupMenuProject/Person.cs) (VB: [PersonViewModel.vb](./VB/GridCommandToPopupMenuProject/PersonViewModel.vb))
 * [PersonViewModel.cs](./CS/GridCommandToPopupMenuProject/PersonViewModel.cs) (VB: [PersonViewModel.vb](./VB/GridCommandToPopupMenuProject/PersonViewModel.vb))
 <!-- default file list end -->
