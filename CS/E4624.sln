@@ -1,5 +1,5 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridCommandToPopupMenuProject", "GridCommandToPopupMenuProject\GridCommandToPopupMenuProject.csproj", "{A3918025-1C64-4511-8F00-1BB27890AF08}"
 EndProject
 Global
